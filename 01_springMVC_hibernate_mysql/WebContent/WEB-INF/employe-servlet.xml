@@ -5,11 +5,16 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Declaration du bean controller -->
-	<bean id="homePageControllerBean" class="fr.adaming.controller.HomePageController">
+	<bean name="/home.htm"
+		class="fr.adaming.controller.HomePageController">
 	
 		<!-- Injection du service. -->
 		<property name="employeService" ref="employeServiceBean"/>
 	</bean>
 
+	<!-- Declaration du gestionnaire de mapping (Handler Mapping) -->
+	<bean id="handlerMappingBean"
+		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+	</bean>
 
 </beans>
