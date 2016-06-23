@@ -29,5 +29,13 @@
 		<!-- Injection du service. -->
 		<property name="employeService" ref="employeServiceBean"/>
 	</bean>
+	
+	<!-- Declaration du bean controller : .htm est une extension anonyme pour cacher la techno reellement utilisee -->
+	<bean name="/deleteEmp.htm"
+		class="fr.adaming.controller.DeleteEmpController">
+	
+		<!-- Injection du service. -->
+		<property name="employeService" ref="employeServiceBean"/>
+	</bean>
 
 </beans>

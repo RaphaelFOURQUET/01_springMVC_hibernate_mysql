@@ -53,7 +53,7 @@
 							</td>
 							<!-- Colonne pour supprimer un employe -->
 							<td>
-								<a href="">Supprimer</a>
+								<a href="deleteEmp.htm?id=${employee.id}">Supprimer</a>
 							</td>
 							
 						</tr>

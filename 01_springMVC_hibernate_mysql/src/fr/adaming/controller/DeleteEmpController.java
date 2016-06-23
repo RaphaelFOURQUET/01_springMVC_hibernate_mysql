@@ -9,7 +9,7 @@ import org.springframework.web.servlet.mvc.AbstractController;
 import fr.adaming.entity.Employe;
 import fr.adaming.service.IGenericService;
 
-public class AddEmpController extends AbstractController {
+public class DeleteEmpController extends AbstractController {
 
 	//Declaration du service
 	//@Autowired	//remplace par injection dans employe-servlet.xml
@@ -25,21 +25,15 @@ public class AddEmpController extends AbstractController {
 
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		employeService.add(new Employe("DURAND", "toto", "manager", "departementX", Math.random()*10000));
-		
+		//Recuperer l'id employe.
+		int id = Integer.parseInt(request.getParameter("id"));
+		//Recuperer l'employe correspondant
+		Employe emp = employeService.getById(id);
+		//Delete employe
+		employeService.delete(emp);
+		//Rediriger
 		response.sendRedirect("home.htm");
 		return null;
-		
-//		//Solution pas super opti ici ?? Comment rediriger vers homecontroller?
-//		//1. Definition du modele de donnees à retourner vers le DispatcherServlet(pour affichage en vue).
-//		//Recup les employes
-//		List<Employe> employeList = employeService.getAll();
-//
-//		//2. Definition du nom logique de la vue à retourner vers la servlet.
-//		String viewName = "home";
-//
-//		//3. Renvoi du modele et de la vue.
-//		return new ModelAndView(viewName, "listeDesEmployes", employeList);
 	}
 
 }
