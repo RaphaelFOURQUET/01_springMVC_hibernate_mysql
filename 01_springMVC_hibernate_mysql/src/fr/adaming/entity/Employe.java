@@ -1,26 +1,25 @@
 package fr.adaming.entity;
 
+import java.io.Serializable;
+
 /**
- * 
+ * Objet persistant.
  * @author INTI-0332
  *
  */
-public class Employe {
+public class Employe implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	//Declaration des proprietes
 	private int id;
-	
 	private String nom;
-	
 	private String prenom;
-	
 	private String fonction;
-	
 	private String departement;
-	
 	private double salaire;
 
-	//Declaration des accesseurs
+	//Declaration des accesseurs : obligatoire pour JavaBean
 	public int getId() {
 		return id;
 	}
@@ -69,7 +68,7 @@ public class Employe {
 		this.salaire = salaire;
 	}
 
-	//Declaration des constructeurs
+	//Declaration des constructeurs : obligatoire pour JavaBean
 	/**
 	 * Default constructor
 	 */
