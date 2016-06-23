@@ -45,6 +45,10 @@
 							<td>${employee.fonction}</td>
 							<td>${employee.departement}</td>
 							<td>${employee.salaire}</td>
+							<!-- Colonne pour editer un employe -->
+							<td>
+								<a href="">Modifier</a>
+							</td>
 							<!-- Colonne pour supprimer un employe -->
 							<td>
 								<a href="">Supprimer</a>
