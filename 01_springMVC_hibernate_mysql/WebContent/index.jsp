@@ -10,6 +10,6 @@
 	<!-- Redirection vers l'url /home.htm -->
 	<h1>Hello</h1>
 	<%-- <% response.sendRedirect("home.htm"); %> --%>
-	<a href="home.htm">Home</a>
+	<a href="home.htm">Liste des employes</a>
 </body>
 </html>

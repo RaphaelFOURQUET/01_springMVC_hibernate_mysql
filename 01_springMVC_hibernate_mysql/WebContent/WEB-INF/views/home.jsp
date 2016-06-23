@@ -35,6 +35,8 @@
 						<th>Fonction</th>
 						<th>Departement</th>
 						<th>Salaire</th>
+						<th></th>
+						<th></th>
 					</tr>
 					<!-- Donnees de la table -->
 					<c:forEach items="${listeDesEmployes}" var="employee">

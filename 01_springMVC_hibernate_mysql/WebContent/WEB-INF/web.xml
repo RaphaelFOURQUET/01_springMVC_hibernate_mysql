@@ -23,7 +23,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>employe</servlet-name>
-  	<url-pattern>/</url-pattern>
+  	<url-pattern>*.htm</url-pattern>
   </servlet-mapping>
   
   <!-- 2. Chargement contexte application Web -->
