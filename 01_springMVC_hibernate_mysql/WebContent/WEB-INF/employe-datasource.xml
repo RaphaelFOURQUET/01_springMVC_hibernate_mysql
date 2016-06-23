@@ -5,6 +5,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
+	<!-- Emplacement des fichiers de proprietes : db.properties -->
+	<context:property-placeholder location="/WEB-INF/db.properties"/>
+
 	<!-- Definition du bean du datasource -->
 	<bean id="datasourceBean" 
 			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -12,10 +15,10 @@
 		<!-- Injection de dependances, correspond à faire en Java :
 			DriverManagerDataSource d = new DriverManagerDataSource();
 			d.setDriverClassName("driverClassName");   .... -->
-		<property name="driverClassName" value="driverClassName"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/nom_bdd"/>
-		<property name="username" value="root"/>
-		<property name="password" value="root"/>
+		<property name="driverClassName" value="${db.driverClassName}"/>
+		<property name="url" value="${db.url}"/>
+		<property name="username" value="${db.username}"/>
+		<property name="password" value="${db.password}"/>
 	</bean>
 
 </beans>

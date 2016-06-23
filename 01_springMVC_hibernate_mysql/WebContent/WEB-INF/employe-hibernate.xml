@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
+	<!-- Emplacement des fichiers de proprietes : db.properties -->
+	<context:property-placeholder location="/WEB-INF/db.properties" />
+
 	<!-- Definition du bean de la SessionFactory Hibernate -->
-	<bean id="sessionFactoryBean" 
-			class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-			
+	<bean id="sessionFactoryBean"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+
 		<!-- Injection de dependances -->
 		<!-- Injection du bean datasource dans la SessionFactory -->
-		<property name="dataSource" ref="datasourceBean"/>
-		
+		<property name="dataSource" ref="datasourceBean" />
+
 		<!-- Declaration des classes annotees -->
 		<property name="annotatedClasses">
 			<list>
 				<value>fr.adaming.entity.Employe</value>
 			</list>
 		</property>
-		
+
 		<!-- Declaration des proprietes hibernate -->
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">
-					org.hibernate.dialect.MySQLDialect
+					${db.hibernate.dialect}
 				</prop>
-				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.show_sql">${db.hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${db.hibernate.hbm2ddl.auto}</prop>
 			</props>
 		</property>
-		
+
 	</bean>
 
 </beans>
