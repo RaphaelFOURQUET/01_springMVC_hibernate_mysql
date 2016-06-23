@@ -124,9 +124,4 @@ public class Employe implements Serializable {
 		this.salaire = salaire;
 	}
 	
-	
-	
-	
-	
-	
 }
