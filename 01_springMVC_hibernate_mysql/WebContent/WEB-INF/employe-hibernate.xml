@@ -34,5 +34,14 @@
 		</property>
 
 	</bean>
+	
+	<!-- Declaration Bean : Transaction Manager (gestion des transactons) -->
+	<bean id="transactionManagerBean"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		
+			<!-- Injecter la session Factory dans le Manager -->
+			<property name="sessionFactory" ref="transactionManagerBean" />
+		
+	</bean>
 
 </beans>
