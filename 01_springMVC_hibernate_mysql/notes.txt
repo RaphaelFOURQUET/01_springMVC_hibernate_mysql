@@ -1,0 +1,13 @@
+-----------------
+Projet Spring MVC
+-----------------
+
+1- Creation projet (Dynamic Web Project)
+
+2- Ajout des jars spring + hibernate + driver mysql dans /lib
+
+3- config de l'appli dans le web.xml
+	3.1 - declaration de la servlet de spring
+	3.2 - declaration de l'emplacement des fichiers de def des beans de spring
+
+4- Ajout du fichier de def du bean datasource
