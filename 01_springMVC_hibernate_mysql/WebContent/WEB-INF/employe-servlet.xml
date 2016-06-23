@@ -21,5 +21,13 @@
 		<property name="prefix" value="/WEB-INF/views/"/>	<!-- Emplacement de la vue. -->
 		<property name="suffix" value=".jsp"/>	<!-- Extension de nos pages -->
 	</bean>
+	
+	<!-- Declaration du bean controller : .htm est une extension anonyme pour cacher la techno reellement utilisee -->
+	<bean name="/addEmp.htm"
+		class="fr.adaming.controller.AddEmpController">
+	
+		<!-- Injection du service. -->
+		<property name="employeService" ref="employeServiceBean"/>
+	</bean>
 
 </beans>
