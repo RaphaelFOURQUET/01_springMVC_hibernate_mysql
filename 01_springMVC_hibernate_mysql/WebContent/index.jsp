@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Spring MVC</title>
+<title>Spring MVC index page</title>
 </head>
 <body>
-	<h1>Hello Spring MVC</h1>
+	<!-- Redirection vers l'url /home.htm -->
+	<% response.sendRedirect("home.htm"); %>
 </body>
 </html>
