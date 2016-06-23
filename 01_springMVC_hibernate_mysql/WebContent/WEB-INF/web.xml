@@ -33,6 +33,8 @@
   		/WEB-INF/employe-datasource.xml
   		/WEB-INF/employe-hibernate.xml
   		/WEB-INF/employe-servlet.xml
+  		/WEB-INF/employe-service.xml
+  		/WEB-INF/employe-dao.xml
   	</param-value>
   </context-param>
   
