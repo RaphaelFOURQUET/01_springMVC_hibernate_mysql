@@ -2,8 +2,6 @@ package fr.adaming.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import fr.adaming.dao.EmployeDaoImpl;
 import fr.adaming.entity.Employe;
 
@@ -15,7 +13,7 @@ import fr.adaming.entity.Employe;
 public class EmployeServiceImpl implements IGenericService<Employe> {
 	
 	//Declaration DAO
-	@Autowired
+	//@Autowired
 	private EmployeDaoImpl employeDao;
 	
 	/**

@@ -5,7 +5,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.adaming.entity.Employe;
 
@@ -14,10 +14,11 @@ import fr.adaming.entity.Employe;
  * @author INTI-0332
  *
  */
+@Transactional	//Toutes les methodes publiques de la classe seront transactionnelles.
 public class EmployeDaoImpl implements IGenericDAO<Employe> {
 
 	//Declaration Session Factory
-	@Autowired //injection auto de la session factory
+	//@Autowired //injection auto de la session factory
 	private SessionFactory sessionFactory;
 
 	/**
