@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
 import fr.adaming.entity.Employe;
-import fr.adaming.service.EmployeServiceImpl;
+import fr.adaming.service.IGenericService;
 
 /**
  * Controller de la page d'accueil.
@@ -20,13 +20,13 @@ public class HomePageController extends AbstractController {
 	
 	//Declaration du service
 	//@Autowired	//remplace par injection dans employe-servlet.xml
-	private EmployeServiceImpl employeService;
+	private IGenericService<Employe> employeService;
 	
 	/**
 	 * Setter pour injection de dependances Spring.
 	 * @param employeService
 	 */
-	public void setEmployeService(EmployeServiceImpl employeService) {
+	public void setEmployeService(IGenericService<Employe> employeService) {
 		this.employeService = employeService;
 	}
 

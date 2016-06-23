@@ -18,7 +18,7 @@
 	
 	<!-- Declaration du bean : View Resolver -->
 	<bean id="viewResolverBean" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views"/>	<!-- Emplacement de la vue. -->
+		<property name="prefix" value="/WEB-INF/views/"/>	<!-- Emplacement de la vue. -->
 		<property name="suffix" value=".jsp"/>	<!-- Extension de nos pages -->
 	</bean>
 

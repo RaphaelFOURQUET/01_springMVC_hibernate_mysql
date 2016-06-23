@@ -2,7 +2,7 @@ package fr.adaming.service;
 
 import java.util.List;
 
-import fr.adaming.dao.EmployeDaoImpl;
+import fr.adaming.dao.IGenericDAO;
 import fr.adaming.entity.Employe;
 
 /**
@@ -14,13 +14,13 @@ public class EmployeServiceImpl implements IGenericService<Employe> {
 	
 	//Declaration DAO
 	//@Autowired
-	private EmployeDaoImpl employeDao;
+	private IGenericDAO<Employe> employeDao;
 	
 	/**
 	 * Setter pour Injection de dependances Spring.
 	 * @param employeDao
 	 */
-	public void setEmployeDao(EmployeDaoImpl employeDao) {
+	public void setEmployeDao(IGenericDAO<Employe> employeDao) {
 		this.employeDao = employeDao;
 	}
 

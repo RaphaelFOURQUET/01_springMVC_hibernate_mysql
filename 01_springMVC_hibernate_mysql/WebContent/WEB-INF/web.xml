@@ -3,6 +3,14 @@
   <display-name>01_springMVC_hibernate_mysql</display-name>
   
   <!-- ================================================ -->
+  <!-- ==============Page de demarrage================= -->
+  <!-- ================================================ -->
+	<welcome-file-list>
+		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+  
+  <!-- ================================================ -->
   <!-- =============Configuration application========== -->
   <!-- ================================================ -->
   
@@ -32,17 +40,10 @@
   	<param-value>
   		/WEB-INF/employe-datasource.xml
   		/WEB-INF/employe-hibernate.xml
-  		/WEB-INF/employe-servlet.xml
-  		/WEB-INF/employe-service.xml
   		/WEB-INF/employe-dao.xml
+  		/WEB-INF/employe-service.xml
+  		/WEB-INF/employe-servlet.xml
   	</param-value>
   </context-param>
   
-  
-  <!-- ================================================ -->
-  <!-- ==============Page de demarrage================= -->
-  <!-- ================================================ -->
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
 </web-app>

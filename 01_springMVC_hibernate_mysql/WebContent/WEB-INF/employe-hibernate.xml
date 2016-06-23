@@ -43,11 +43,13 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		
 		<!-- Injecter la session Factory dans le Manager -->
-		<property name="sessionFactory" ref="transactionManagerBean" />
+		<property name="sessionFactory" ref="sessionFactoryBean" />
 	</bean>
 	
 	<!-- Detection des annotations des transactions 
 		ex: @Transactional -->
 	<tx:annotation-driven transaction-manager="transactionManagerBean"/>
+	<!-- Pour accepter les classes au lieu des interfaces lors de la declaratio ndes proprietes dans mes Impl -->
+	<!-- <tx:annotation-driven transaction-manager="transactionManagerBean" proxy-target-class="true"/> -->
 
 </beans>
