@@ -9,6 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.adaming.entity.Employe;
 
+/**
+ * Implementation concrete du DAO.
+ * @author INTI-0332
+ *
+ */
 public class EmployeDaoImpl implements IGenericDAO<Employe> {
 
 	//Declaration Session Factory

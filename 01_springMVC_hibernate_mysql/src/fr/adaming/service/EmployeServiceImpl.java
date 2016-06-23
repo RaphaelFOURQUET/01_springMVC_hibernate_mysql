@@ -8,7 +8,7 @@ import fr.adaming.dao.EmployeDaoImpl;
 import fr.adaming.entity.Employe;
 
 /**
- * 
+ * Implementation concrete du service.
  * @author INTI-0332
  *
  */
