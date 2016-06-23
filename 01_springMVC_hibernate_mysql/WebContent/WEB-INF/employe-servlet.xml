@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- Declaration du bean controller -->
+	<!-- Declaration du bean controller : .htm est une extension anonyme pour cacher la techno reellement utilisee -->
 	<bean name="/home.htm"
 		class="fr.adaming.controller.HomePageController">
 	
@@ -14,7 +14,12 @@
 
 	<!-- Declaration du gestionnaire de mapping (Handler Mapping) -->
 	<bean id="handlerMappingBean"
-		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	
+	<!-- Declaration du bean : View Resolver -->
+	<bean id="viewResolverBean" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views"/>	<!-- Emplacement de la vue. -->
+		<property name="suffix" value=".jsp"/>	<!-- Extension de nos pages -->
 	</bean>
 
 </beans>
