@@ -2,17 +2,29 @@ package fr.adaming.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Objet persistant.
  * @author INTI-0332
  *
  */
+@Entity(name="employe")	//Rendre la classe persistante + nommer notre entite
+@Table(name="employes")	//Renommer ma table en BDD
 public class Employe implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	//Declaration des proprietes
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_employe", nullable=false)	//renommer ma colonne id + refuser les valeurs null
 	private int id;
+	
 	private String nom;
 	private String prenom;
 	private String fonction;
