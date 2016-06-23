@@ -11,6 +11,7 @@
 		<config>WebContent/WEB-INF/employe-hibernate.xml</config>
 		<config>WebContent/WEB-INF/employe-service.xml</config>
 		<config>WebContent/WEB-INF/employe-dao.xml</config>
+		<config>WebContent/WEB-INF/employe-servlet.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
