@@ -45,27 +45,27 @@ public class EmployeDaoImpl implements IGenericDAO<Employe> {
 		Session session = sessionFactory.openSession();
 
 		//Plusieurs facons de faire
-		//session.update(pEmploye);	//par session
+		session.update(pEmploye);	//par session
 
 
 		//Par requete HQL.
-		String hqlUpdateEmployeReq = "Update employe e Set e.fonction = :pFonction "
-				+ "Where e.id = :pId";
-
-		//Definition de la requete hibernate
-		Query request = session.createQuery(hqlUpdateEmployeReq);
-
-		//Passage des parametres à la requete
-		request.setParameter("pFonction", pEmploye.getFonction());
-		request.setParameter("pId", pEmploye.getId());
-
-		//Executer la requete
-		//result : Nombres de lignes modifiees dans la bdd
-		int result = request.executeUpdate();
-		System.out.println("Nombre d'employes MAJ =========> : "+result);
-		if(result > 1) {
-			System.out.println("Coherence des donnees compromises : 2 employes de même Id.");
-		}
+//		String hqlUpdateEmployeReq = "Update employe e Set e.fonction = :pFonction "
+//				+ "Where e.id = :pId";
+//
+//		//Definition de la requete hibernate
+//		Query request = session.createQuery(hqlUpdateEmployeReq);
+//
+//		//Passage des parametres à la requete
+//		request.setParameter("pFonction", pEmploye.getFonction());
+//		request.setParameter("pId", pEmploye.getId());
+//
+//		//Executer la requete
+//		//result : Nombres de lignes modifiees dans la bdd
+//		int result = request.executeUpdate();
+//		System.out.println("Nombre d'employes MAJ =========> : "+result);
+//		if(result > 1) {
+//			System.out.println("Coherence des donnees compromises : 2 employes de même Id.");
+//		}
 	}
 
 	/**
@@ -105,16 +105,16 @@ public class EmployeDaoImpl implements IGenericDAO<Employe> {
 		//		Employe empl = (Employe) session.get(Employe.class, (Serializable) id);
 		//		
 		//		return empl;
+		
 		//2eme methode : par HQL
 		String hqlGetEmployeReq = "From employe e Where e.id = :pId";
 
 		Query request = session.createQuery(hqlGetEmployeReq);
 
 		request.setParameter("pId", id);
+		
+		return (Employe) request.uniqueResult();
 
-		List<Employe> l = request.list();
-
-		return l.get(0);
 	}
 
 	@Override
