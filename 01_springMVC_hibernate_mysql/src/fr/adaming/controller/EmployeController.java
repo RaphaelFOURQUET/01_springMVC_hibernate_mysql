@@ -3,6 +3,7 @@ package fr.adaming.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,6 +37,23 @@ public class EmployeController {
 		
 		//renvoi du nom logique de la vue et du modele (nouvel Employe)
 		return new ModelAndView(viewName, "currentEmploye", new Employe());
+	}
+	
+	/**
+	 * Ajoute un employe dans la base.
+	 * @return
+	 */
+	@RequestMapping(value="/addEmploye", method=RequestMethod.POST)
+	private String addEmployePost(@ModelAttribute("currentEmploye") Employe empl, ModelMap model) {
+		//Recuperer les valeurs du formulaire.
+		//employeService.add(new Employe(empl.getNom(), empl.getPrenom(), empl.getFonction(), empl.getDepartement(), empl.getSalaire()));
+		employeService.add(empl);
+		
+		//Recuperer les employes de la Bdd
+		model.addAttribute("listeDesEmployes", this.employeService.getAll());
+
+		//Renvoi du nom logique de la vue
+		return "home";
 	}
 
 	/**

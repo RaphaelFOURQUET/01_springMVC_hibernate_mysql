@@ -21,7 +21,8 @@
 	<table align="center" width="80%">
 		<tr>
 			<td align="right">
-				<a href="${pageContext.request.contextPath}/employe/ajouterEmploye">Ajouter un employe</a>
+				<a href="${pageContext.request.contextPath}/employe/ajouterEmploye">Ajouter un employe random</a>
+				<a href="${pageContext.request.contextPath}/employe/addEmploye">Ajouter un employe</a>
 			</td>
 		</tr>
 		<tr>

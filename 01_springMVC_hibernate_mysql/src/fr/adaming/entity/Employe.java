@@ -123,5 +123,13 @@ public class Employe implements Serializable {
 		this.departement = departement;
 		this.salaire = salaire;
 	}
+
+	@Override
+	public String toString() {
+		return "Employe [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", fonction=" + fonction + ", departement="
+				+ departement + ", salaire=" + salaire + "]";
+	}
+	
+	
 	
 }
