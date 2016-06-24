@@ -49,7 +49,7 @@
 							<td>${employee.salaire}</td>
 							<!-- Colonne pour editer un employe -->
 							<td>
-								<a href="">Modifier</a>
+								<a href="editEmp.htm?id=${employee.id}">Modifier</a>
 							</td>
 							<!-- Colonne pour supprimer un employe -->
 							<td>

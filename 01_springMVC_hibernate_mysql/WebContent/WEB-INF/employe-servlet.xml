@@ -37,5 +37,8 @@
 		<!-- Injection du service. -->
 		<property name="employeService" ref="employeServiceBean"/>
 	</bean>
+	
+	<bean name="editEmp.htm" class="fr.adaming.controller.EditEmpController">
+	</bean>
 
 </beans>
