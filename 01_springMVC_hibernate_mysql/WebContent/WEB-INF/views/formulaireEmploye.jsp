@@ -11,32 +11,32 @@
 </head>
 <body>
 	<table cellpadding="0" cellspacing="0" border="1" width="20%">
-		<tr>
-			<td><h1>Formulaire Ajout Employe</h1></td>
+		<tr style="background-color: lightgrey;">
+			<td><h3 align="center">Formulaire Ajout Employe</h3></td>
 		</tr>
-		<tr>
+		<tr style="background-color: lightyellow">
 			<td><form:form action="addEmploye" method="post"
 					modelAttribute="currentEmploye">
 					<table width="100%">
 						<tr>
 							<td><form:label path="nom">Nom:</form:label></td>
-							<td align="center" width="100%"><form:input path="nom" /></td>
+							<td align="center" width="100%"><form:input path="nom" size="35"/></td>
 						</tr>
 						<tr>
 							<td><form:label path="prenom">Prenom:</form:label></td>
-							<td align="center" width="100%"><form:input path="prenom" /></td>
+							<td align="center" width="100%"><form:input path="prenom" size="35"/></td>
 						</tr>
 						<tr>
 							<td><form:label path="fonction">Fonction:</form:label></td>
-							<td align="center" width="100%"><form:input path="fonction" /></td>
+							<td align="center" width="100%"><form:input path="fonction" size="35"/></td>
 						</tr>
 						<tr>
 							<td><form:label path="departement">Departement:</form:label></td>
-							<td align="center" width="100%"><form:input path="departement" /></td>
+							<td align="center" width="100%"><form:input path="departement" size="35"/></td>
 						</tr>
 						<tr>
 							<td><form:label path="salaire">Salaire:</form:label></td>
-							<td align="center" width="100%"><form:input path="salaire" /></td>
+							<td align="center" width="100%"><form:input path="salaire" size="35"/></td>
 						</tr>
 						<tr>
 							<td colspan="2"><input type="submit" value="Submit" /></td>
