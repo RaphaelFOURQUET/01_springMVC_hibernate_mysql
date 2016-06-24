@@ -18,10 +18,10 @@ import fr.adaming.service.IGenericService;
 @Controller		//Declaration du bean par annotation
 @RequestMapping(value="/employe")	//Mapping url /employe sur ce controller
 public class EmployeController {
-	
+
 	@Autowired	//Injection de dependances par annotation
 	private IGenericService<Employe> employeService;
-	
+
 	/**
 	 * Methode de suppression d'un employe.
 	 * @return
@@ -29,14 +29,31 @@ public class EmployeController {
 	@RequestMapping(value="/deleteEmploye/{employeID}")
 	public String supprimerEmploye(@PathVariable("employeID") int pIdEmploye, 
 			ModelMap model) {
-		
+
 		//Appel du service pour supprimer l'employe
 		this.employeService.delete(this.employeService.getById(pIdEmploye));
-		
+
 		//Recuperer les employes de la Bdd
 		model.addAttribute("listeDesEmployes", this.employeService.getAll());
-		
+
 		return "home";
+	}
+
+	/**
+	 * Methode d'ajout d'un employe
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/ajouterEmploye")
+	public String ajouterEmploye(ModelMap model) {
+
+		employeService.add(new Employe("DURAND", "toto", "manager", "departementX", Math.random()*10000));
+
+		//Recuperer les employes de la Bdd
+		model.addAttribute("listeDesEmployes", this.employeService.getAll());
+
+		return "home";
+
 	}
 
 }

@@ -21,7 +21,7 @@
 	<table align="center" width="80%">
 		<tr>
 			<td align="right">
-				<a href="addEmp.htm">Ajouter un employe</a>
+				<a href="${pageContext.request.contextPath}/employe/ajouterEmploye">Ajouter un employe</a>
 			</td>
 		</tr>
 		<tr>
