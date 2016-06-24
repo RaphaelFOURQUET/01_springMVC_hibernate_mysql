@@ -53,7 +53,8 @@
 							</td>
 							<!-- Colonne pour supprimer un employe -->
 							<td>
-								<a href="deleteEmp.htm?id=${employee.id}">Supprimer</a>
+								<a href="${pageContext.request.contextPath}/employe/deleteEmploye/${employee.id}">
+									Supprimer</a>
 							</td>
 							
 						</tr>
