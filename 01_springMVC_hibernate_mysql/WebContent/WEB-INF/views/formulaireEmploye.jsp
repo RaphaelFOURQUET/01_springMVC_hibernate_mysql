@@ -11,6 +11,10 @@
 <title>Formulaire</title>
 </head>
 <body>
-	<h1>Formulaire</h1>
+	<h1>Formulaire Employe</h1>
+	<form action="addEmploye" method="post">
+		<!-- TODO -->
+	</form>
+	
 </body>
 </html>

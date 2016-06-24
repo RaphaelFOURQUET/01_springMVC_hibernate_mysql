@@ -14,7 +14,7 @@ public class EditEmpController extends AbstractController {
 		//recuperer infos en Employe en Bdd
 		
 		System.out.println("Edit Employe Controller here !");
-		response.sendRedirect("form.htm");
+		response.sendRedirect("formulaireEmploye.htm");
 
 		return null;
 	}

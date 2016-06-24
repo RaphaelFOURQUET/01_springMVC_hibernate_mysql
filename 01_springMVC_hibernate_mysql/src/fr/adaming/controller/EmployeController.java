@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import fr.adaming.entity.Employe;
 import fr.adaming.service.IGenericService;
@@ -21,6 +23,20 @@ public class EmployeController {
 
 	@Autowired	//Injection de dependances par annotation
 	private IGenericService<Employe> employeService;
+	
+	/**
+	 * Initialise un nouvel employe vers la vue.
+	 * @return
+	 */
+	@RequestMapping(value="/addEmploye", method=RequestMethod.GET)
+	private ModelAndView addEmploye() {
+		
+		//Definition du nom logique de la vue.
+		String viewName = "formulaireEmploye";
+		
+		//renvoi du nom logique de la vue et du modele (nouvel Employe)
+		return new ModelAndView(viewName, "currentEmploye", new Employe());
+	}
 
 	/**
 	 * Methode de suppression d'un employe.
@@ -40,7 +56,7 @@ public class EmployeController {
 	}
 
 	/**
-	 * Methode d'ajout d'un employe
+	 * Methode d'ajout d'un employe deprecated.
 	 * @param model
 	 * @return
 	 */

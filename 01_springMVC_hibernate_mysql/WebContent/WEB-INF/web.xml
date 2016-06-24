@@ -25,6 +25,18 @@
   	<servlet-name>employe</servlet-name>
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
+<!--   <servlet-mapping>
+  	<servlet-name>employe</servlet-name>
+  	<url-pattern>*.htm</url-pattern>
+  </servlet-mapping> -->
+<!--  <servlet-mapping>
+  	<servlet-name>employe</servlet-name>
+  	<url-pattern>/employe/*</url-pattern>
+  </servlet-mapping> -->
+<!-- <servlet-mapping>
+  	<servlet-name>employe</servlet-name>
+  	<url-pattern>*.htm</url-pattern>
+  </servlet-mapping> -->
   
   <!-- 2. Chargement contexte application Web -->
   <!-- 2.1 Declaration du listener du contexte Spring -->
